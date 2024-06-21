@@ -4,33 +4,6 @@
         "source": "/api/(.*)",
         "destination": "/api/$1"
       }
-    ],
-    "headers": [
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "http://localhost:5173"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://rainbow-truffle-8c842f.netlify.app"
-          },
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://blog-app-gilt-three.vercel.app"
-          },
-          {
-            "key": "Access-Control-Allow-Methods",
-            "value": "GET, POST, PUT, DELETE"
-          },
-          {
-            "key": "Access-Control-Allow-Headers",
-            "value": "Content-Type, Authorization"
-          }
-        ]
-      }
     ]
   }
   
