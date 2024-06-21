@@ -26,9 +26,24 @@ const connectDB=async()=>{
 dotenv.config()
 app.use(express.json())
 app.use("/images",express.static(path.join(__dirname,"/images")))
-app.use(cors({origin: 'http://localhost:5173',
+// app.use(cors({origin: 'http://localhost:5173',
+//     credentials: true
+// }))
+const allowedOrigins = ['http://localhost:5173', 'https://blog-app-gilt-three.vercel.app'];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
-}))
+};
+
+app.use(cors(corsOptions));
+
 app.use(cookieParser())
 app.use("/api/auth",authRoute)
 app.use("/api/users",userRoute)
