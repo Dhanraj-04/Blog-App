@@ -26,25 +26,26 @@ const connectDB=async()=>{
 dotenv.config()
 app.use(express.json())
 app.use("/images",express.static(path.join(__dirname,"/images")))
-// app.use(cors({origin: 'http://localhost:5173',
-//     credentials: true
-// }))
-const allowedOrigins = ['http://localhost:5173', 'https://blog-app-gilt-three.vercel.app', 'https://rainbow-truffle-8c842f.netlify.app'];
+app.use(cors({origin: 'http://localhost:5173',
+    credentials: true
+}))
+// const allowedOrigins = ['http://localhost:5173', 'https://blog-app-gilt-three.vercel.app', 'https://rainbow-truffle-8c842f.netlify.app'];
 
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-};
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         console.log('Request Origin:', origin);
+//         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error('Not allowed by CORS'));
+//         }
+//     },
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(cookieParser())
 app.use("/api/auth",authRoute)
