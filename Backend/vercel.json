@@ -15,7 +15,7 @@
         },
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "http://localhost:5173"
+          "value": "https://blog-app-gilt-three.vercel.app"
         },
         {
           "key": "Access-Control-Allow-Methods",
