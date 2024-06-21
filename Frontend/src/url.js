@@ -1,2 +1,2 @@
-export const URL="https://blog-app-gilt-three.vercel.app"
-export const IF="https://blog-app-gilt-three.vercel.app/images/"
+export const URL="http://localhost:5000"
+export const IF="http://localhost:5000/images/"
