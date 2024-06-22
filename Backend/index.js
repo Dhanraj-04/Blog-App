@@ -46,7 +46,7 @@ app.use("/images",express.static(path.join(__dirname,"/images")))
 // };
 
 // app.use(cors(corsOptions));
-var whitelist = ["http://localhost:5173", "https://steady-crepe-102dc1.netlify.app/"];
+var whitelist = ["http://localhost:5173", "https://steady-crepe-102dc1.netlify.app"];
 var corsOptions = { origin: whitelist, credentials: true };
 app.use(cors(corsOptions));
 
